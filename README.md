@@ -6,7 +6,7 @@ Big ups to [Eric Wastl](https://twitter.com/ericwastl) for organising this event
 
 | Day | Status |
 | :--- | :---: |
-| [Day 1: Calorie Counting](./day01) | 🧠 |
+| [Day 1: Calorie Counting](./day01) | ⭐⭐ |
 | [Day 2: ?](./day02) | 🧠 |
 | [Day 3: ?](./day03) | 🧠 |
 | [Day 4: ?](./day04) | 🧠 |
