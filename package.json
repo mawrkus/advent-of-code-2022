@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "My JavaScript solutions for the [Advent of Code 2022](https://adventofcode.com/2022) programming puzzles.",
   "scripts": {
-    "start:day": "node scripts/start-day.js"
+    "start:day": "node scripts/start-day.js",
+    "add:star": "node scripts/add-star.js"
   },
   "repository": {
     "type": "git",
