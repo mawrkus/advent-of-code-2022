@@ -6,6 +6,8 @@ const dayNumber = parseDayNumber();
 
 addStar(dayNumber);
 
+console.log("Yes!!\n");
+
 function addStar(dayNumber) {
   const readmePath = path.join(process.cwd(), "README.md");
   const readmeContent = fs.readFileSync(readmePath, { encoding: "utf-8" });
