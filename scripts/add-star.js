@@ -1,10 +1,9 @@
-const fs = require("fs");
-const path = require("path");
-const { parseDayNumber } = require("./helpers/parseDayNumber");
+import fs from "fs";
+import path from "path";
 
-const dayNumber = parseDayNumber();
+import { parseDayNumber } from "./helpers/parseDayNumber.js";
 
-addStar(dayNumber);
+addStar(parseDayNumber());
 
 console.log("Yes!!\n");
 

@@ -2,6 +2,7 @@
   "name": "advent-of-code-2022",
   "version": "1.0.0",
   "description": "My JavaScript solutions for the [Advent of Code 2022](https://adventofcode.com/2022) programming puzzles.",
+  "type": "module",
   "scripts": {
     "start:day": "node scripts/start-day.js",
     "add:star": "node scripts/add-star.js"
@@ -16,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/mawrkus/advent-of-code-2022/issues"
   },
-  "homepage": "https://github.com/mawrkus/advent-of-code-2022#readme"
+  "homepage": "https://github.com/mawrkus/advent-of-code-2022#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "node-fetch": "^3.3.0"
+  }
 }

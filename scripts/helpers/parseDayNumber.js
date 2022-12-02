@@ -1,4 +1,4 @@
-function parseDayNumber() {
+export function parseDayNumber() {
   const [, , rawDayNumber] = process.argv;
 
   const dayNumber = Number(rawDayNumber);
@@ -16,5 +16,3 @@ function parseDayNumber() {
   }
   return dayNumber;
 }
-
-exports.parseDayNumber = parseDayNumber;
