@@ -29,7 +29,7 @@ function fetchPuzzle(dayNumber) {
     .then((rawHtml) => {
       const $ = load(rawHtml);
 
-      const html = $("main article")
+      const html = $("main > article")
         .html()
         .replace(/<\/p>/g, "\n")
         .replace(/<li>/g, "- ")
@@ -57,7 +57,7 @@ function buildFiles(dayNumber, dayFolder, variables) {
     const filePath = path.join(dayFolder, fileName);
     const rawContent = fs.readFileSync(filePath, { encoding: "utf-8" });
 
-    const content = Object.entries({ variables }).reduce(
+    const content = Object.entries(variables).reduce(
       (acc, [key, value]) => acc.replaceAll(`{${key}}`, value),
       rawContent
     );

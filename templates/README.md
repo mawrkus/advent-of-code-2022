@@ -7,5 +7,3 @@
 {firstPuzzleText}
 
 ## 🧩 Second puzzle
-
-{secondPuzzleText}
