@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "start:day": "node scripts/start-day.js",
-    "add:star": "node scripts/add-star.js"
+    "add:star": "node scripts/add-star.js",
+    "continue:day": "node scripts/continue-day.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   "homepage": "https://github.com/mawrkus/advent-of-code-2022#readme",
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
+    "dotenv": "^16.0.3",
     "node-fetch": "^3.3.0"
   }
 }

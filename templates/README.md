@@ -7,3 +7,5 @@
 {firstPuzzleText}
 
 ## 🧩 Second puzzle
+
+{secondPuzzleText}
