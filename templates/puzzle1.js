@@ -1,5 +1,5 @@
-const textInput = require("./sample");
-// const textInput = require("./input");
+import textInput from "./sample.js";
+// import textInput from "./input.js";
 
 const input = textInput.trim().split("\n");
 
