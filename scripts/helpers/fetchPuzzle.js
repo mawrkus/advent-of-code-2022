@@ -1,10 +1,14 @@
 import fetch from "node-fetch";
 import { load } from "cheerio";
-import * as dotenv from 'dotenv'
+import * as dotenv from "dotenv";
 
 export function fetchPuzzle(dayNumber, partNumber) {
   if (partNumber === 2) {
-    dotenv.config()
+    dotenv.config();
+
+    if (!process.env.ADVENT_COOKIE) {
+      throw new Error("Don't forget the cookies! ;)");
+    }
   }
 
   return fetch(`https://adventofcode.com/2022/day/${dayNumber}`, {
