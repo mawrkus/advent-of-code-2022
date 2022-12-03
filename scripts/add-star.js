@@ -5,7 +5,7 @@ import { parseDayNumber } from "./helpers/parseDayNumber.js";
 
 addStar(parseDayNumber());
 
-console.log("Yes!!\n");
+console.log("Yes!! 🎉\n");
 
 function addStar(dayNumber) {
   const readmePath = path.join(process.cwd(), "README.md");

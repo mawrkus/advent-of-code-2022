@@ -8,7 +8,7 @@ Big ups to [Eric Wastl](https://twitter.com/ericwastl) for organising this event
 | :--- | :---: |
 | [Day 1: Calorie Counting](./day01) | ⭐⭐ |
 | [Day 2: Rock Paper Scissors](./day02) | ⭐⭐ |
-| [Day 3: ?](./day03) | 🧠🧠 |
+| [Day 3: Rucksack Reorganization](./day03) | ⭐⭐ |
 | [Day 4: ?](./day04) | 🧠🧠 |
 | [Day 5: ?](./day05) | 🧠🧠 |
 | [Day 6: ?](./day06) | 🧠🧠 |
