@@ -47,7 +47,7 @@ This example list uses single-digit section IDs to make it easier to draw; your 
 ...45678.  4-8
 ```
 
-Some of the pairs have noticed that one of their assignments **fully contains`** such pairs.
+Some of the pairs have noticed that one of their assignments **fully contains** such pairs.
 
 **In how many assignment pairs does one range fully contain the other?**
 

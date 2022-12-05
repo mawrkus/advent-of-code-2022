@@ -33,7 +33,7 @@ export function fetchPuzzle(dayNumber, partNumber) {
         .replace(/<ul>[^<]*/g, "")
         .replace(/<li>/g, "- ")
         .replace(/<code><em>/g, "**`")
-        .replace(/<\/em>.*<\/code>/g, "`**")
+        .replace(/<\/em><\/code>/g, "`**")
         .replace(/<pre><code>/g, "```text\n")
         .replace(/<\/code>.*<\/pre>/g, "```\n")
         .replace(/(<code>|<\/code>)/g, "`")
