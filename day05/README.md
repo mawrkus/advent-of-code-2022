@@ -13,10 +13,10 @@ The Elves don't want to interrupt the crane operator during this delicate proced
 They do, however, have a drawing of the starting stacks of crates **and** the rearrangement procedure (your puzzle input). For example:
 
 ```text
-    [D]    
-[N] [C]    
+    [D]
+[N] [C]
 [Z] [M] [P]
- 1   2   3 
+ 1   2   3
 
 move 1 from 2 to 1
 move 3 from 1 to 3
@@ -29,10 +29,10 @@ In this example, there are three stacks of crates. Stack 1 contains two crates: 
 Then, the rearrangement procedure is given. In each step of the procedure, a quantity of crates is moved from one stack to a different stack. In the first step of the above rearrangement procedure, one crate is moved from stack 2 to stack 1, resulting in this configuration:
 
 ```text
-[D]        
-[N] [C]    
+[D]
+[N] [C]
 [Z] [M] [P]
- 1   2   3 
+ 1   2   3
 ```
 
 In the second step, three crates are moved from stack 1 to stack 3. Crates are moved **one at a time**, so the first crate to be moved (`D`) ends up below the second and third crates:
@@ -80,19 +80,19 @@ The CrateMover 9001 is notable for many new and exciting features: air condition
 Again considering the example above, the crates begin in the same configuration:
 
 ```text
-    [D]    
-[N] [C]    
+    [D]
+[N] [C]
 [Z] [M] [P]
- 1   2   3 
+ 1   2   3
 ```
 
 Moving a single crate from stack 2 to stack 1 behaves the same as before:
 
 ```text
-[D]        
-[N] [C]    
+[D]
+[N] [C]
 [Z] [M] [P]
- 1   2   3 
+ 1   2   3
 ```
 
 However, the action of moving three crates from stack 1 to stack 3 means that those three moved crates **stay in the same order**, resulting in this new configuration:
@@ -118,10 +118,10 @@ Next, as both crates are moved from stack 2 to stack 1, they **retain their orde
 Finally, a single crate is still moved from stack 1 to stack 2, but now it's crate `C` that gets moved:
 
 ```text
-        [**D**]
+        [D]
         [N]
         [Z]
-[**M**] [**C**] [P]
+[M] [C] [P]
  1   2   3
 ```
 
