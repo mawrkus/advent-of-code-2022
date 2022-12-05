@@ -58,10 +58,10 @@ Then, both crates are moved from stack 2 to stack 1. Again, because crates are m
 Finally, one crate is moved from stack 1 to stack 2:
 
 ```text
-        [**Z**]
+        [Z]
         [N]
         [D]
-[**C**] [**M**] [P]
+[C] [M] [P]
  1   2   3
 ```
 
