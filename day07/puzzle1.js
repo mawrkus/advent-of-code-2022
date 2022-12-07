@@ -28,6 +28,8 @@ traverseFs(fs["/"], (node, level) => {
   } else {
     console.log("%s- %s (file, size=%d)", tabSize, node.name, node.size);
   }
+
+  return true;
 });
 
 console.log("→", output);

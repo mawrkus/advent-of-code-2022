@@ -38,7 +38,11 @@ traverseFs(fs["/"], (node) => {
     } else {
       console.log("candidate:", node.name, node.size);
     }
+
+    return true;
   }
+
+  return false;
 });
 
 console.log("\n→", output);
