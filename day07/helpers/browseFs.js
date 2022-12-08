@@ -1,5 +1,3 @@
-import { updateDirSize } from "./updateDirSize.js";
-
 export function browseFs(commands) {
   const fs = {
     "/": {
@@ -71,4 +69,12 @@ export function browseFs(commands) {
   }
 
   return fs;
+}
+
+function updateDirSize(currentDir, fileSize) {
+  currentDir.size += fileSize;
+
+  if (currentDir.parentDir) {
+    updateDirSize(currentDir.parentDir, fileSize);
+  }
 }
