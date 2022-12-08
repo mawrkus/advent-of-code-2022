@@ -1,14 +1,11 @@
 // import textInput from "./sample.js";
 import textInput from "./input.js";
 
+import { parseCommandLines } from "./helpers/parseCommandLines.js";
 import { browseFs } from "./helpers/browseFs.js";
 import { traverseFs } from "./helpers/traverseFs.js";
 
-const input = textInput
-  .trim()
-  .split("$")
-  .filter(Boolean)
-  .map((cmdLine) => cmdLine.trim().split("\n"));
+const input = parseCommandLines(textInput);
 
 console.log(input);
 
@@ -30,7 +27,7 @@ console.log("space to free\t= %d\n", spaceToFree);
 output = Number.POSITIVE_INFINITY;
 
 traverseFs(fs["/"], (node) => {
-  if (node.content && node.size >= spaceToFree) {
+  if (node.items && node.size >= spaceToFree) {
     if (node.size < output) {
       output = node.size;
 

@@ -1,14 +1,11 @@
 // import textInput from "./sample.js";
 import textInput from "./input.js";
 
+import { parseCommandLines } from "./helpers/parseCommandLines.js";
 import { browseFs } from "./helpers/browseFs.js";
 import { traverseFs } from "./helpers/traverseFs.js";
 
-const input = textInput
-  .trim()
-  .split("$")
-  .filter(Boolean)
-  .map((cmdLine) => cmdLine.trim().split("\n"));
+const input = parseCommandLines(textInput);
 
 console.log(input);
 
@@ -19,7 +16,7 @@ const fs = browseFs(input);
 traverseFs(fs["/"], (node, level) => {
   const tabSize = "  ".repeat(level);
 
-  if (node.content) {
+  if (node.items) {
     console.log("%s- %s (dir, size=%d)", tabSize, node.name, node.size);
 
     if (node.size <= 100000) {
