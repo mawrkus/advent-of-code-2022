@@ -37,6 +37,10 @@ export function browseFs(commands) {
     }
 
     if (cmd === "ls") {
+      if (Object.keys(currentDir.items).length) {
+        continue;
+      }
+
       currentDir.items = output.reduce((acc, { name, size, items }) => {
         if (items) {
           acc[name] = {
