@@ -22,12 +22,12 @@ export function browseFs(commands) {
         newDir = currentDir.parentDir;
       } else {
         newDir = currentDir.items[arg];
+      }
 
-        if (!newDir) {
-          throw new Error(
-            `Directory "${arg}" does not exist in "${currentDir.name}"!`
-          );
-        }
+      if (!newDir) {
+        throw new Error(
+          `Directory "${arg}" does not exist in "${currentDir.name}"!`
+        );
       }
 
       currentDir = newDir;
