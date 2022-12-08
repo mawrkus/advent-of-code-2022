@@ -20,21 +20,29 @@ export function parseCommandLines(textInput) {
               };
             }
 
-            const [, rawFileSize, fileName] = dirOrFile.match(/([0-9]+) (.+)/);
+            const fileMatches = dirOrFile.match(/([0-9]+) (.+)/);
 
-            return {
-              name: fileName,
-              size: Number(rawFileSize),
-            };
+            if (fileMatches) {
+              return {
+                name: fileMatches[0],
+                size: Number(fileMatches[1]),
+              };
+            }
+
+            throw new Error(`Unknown item type "${dirOrFile}"!`);
           }),
         };
       }
 
-      const [, arg] = cmd.match(/cd (.+)/);
+      const cdMatches = cmd.match(/cd (.+)/);
 
-      return {
-        cmd: "cd",
-        arg,
-      };
+      if (cdMatches) {
+        return {
+          cmd: "cd",
+          arg: cdMatches[1],
+        };
+      }
+
+      throw new Error(`Unknown command "${cmd}"!`);
     });
 }
