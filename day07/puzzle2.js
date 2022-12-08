@@ -2,21 +2,40 @@
 import textInput from "./input.js";
 
 import { parseCommandLines } from "./helpers/parseCommandLines.js";
-import { browseFs } from "./helpers/browseFs.js";
-import { traverseFs } from "./helpers/traverseFs.js";
+import { updateDirSize } from "./helpers/updateDirSize.js";
 
-const input = parseCommandLines(textInput);
+const fs = {};
+let currentPath = ["/"];
 
-console.log(input);
+parseCommandLines(textInput, ({ newDir, fileSize }) => {
+  if (newDir) {
+    if (newDir === "/") {
+      currentPath = ["/"];
+    } else if (newDir === "..") {
+      currentPath.pop();
+    } else {
+      currentPath.push(newDir);
+    }
+
+    return;
+  }
+
+  if (fileSize) {
+    updateDirSize(fs, currentPath, fileSize);
+
+    return;
+  }
+});
+
+console.log(textInput);
+console.log(fs);
 
 let output = 0;
-
-const fs = browseFs(input);
 
 const totalAvailableSpace = 70000000;
 const spaceNeeded = 30000000;
 
-const usedSpace = fs["/"].size;
+const usedSpace = fs["/"];
 const unusedSpace = totalAvailableSpace - usedSpace;
 const spaceToFree = spaceNeeded - unusedSpace;
 
@@ -26,20 +45,17 @@ console.log("space to free\t= %d\n", spaceToFree);
 
 output = Number.POSITIVE_INFINITY;
 
-traverseFs(fs["/"], (node) => {
-  if (node.items && node.size >= spaceToFree) {
-    if (node.size < output) {
-      output = node.size;
+Object.values(fs)
+  .forEach((size) => {
+    if (size >= spaceToFree) {
+      if (size < output) {
+        output = size;
 
-      console.log("candidate:", node.name, node.size, '(best)');
-    } else {
-      console.log("candidate:", node.name, node.size);
+        console.log("candidate:", size, '(best)');
+      } else {
+        console.log("candidate:", size);
+      }
     }
-
-    return true;
-  }
-
-  return false;
-});
+  });
 
 console.log("\n→", output);

@@ -2,31 +2,38 @@
 import textInput from "./input.js";
 
 import { parseCommandLines } from "./helpers/parseCommandLines.js";
-import { browseFs } from "./helpers/browseFs.js";
-import { traverseFs } from "./helpers/traverseFs.js";
+import { updateDirSize } from "./helpers/updateDirSize.js";
 
-const input = parseCommandLines(textInput);
+const fs = {};
+let currentPath = ["/"];
 
-console.log(input);
+parseCommandLines(textInput, ({ newDir, fileSize }) => {
+  if (newDir) {
+    if (newDir === "/") {
+      currentPath = ["/"];
+    } else if (newDir === "..") {
+      currentPath.pop();
+    } else {
+      currentPath.push(newDir);
+    }
+
+    return;
+  }
+
+  if (fileSize) {
+    updateDirSize(fs, currentPath, fileSize);
+
+    return;
+  }
+});
+
+console.log(textInput);
+console.log(fs);
 
 let output = 0;
 
-const fs = browseFs(input);
-
-traverseFs(fs["/"], (node, level) => {
-  const tabSize = "  ".repeat(level);
-
-  if (node.items) {
-    console.log("%s- %s (dir, size=%d)", tabSize, node.name, node.size);
-
-    if (node.size <= 100000) {
-      output += node.size;
-    }
-  } else {
-    console.log("%s- %s (file, size=%d)", tabSize, node.name, node.size);
-  }
-
-  return true;
-});
+output = Object.values(fs)
+  .filter((size) => size <= 100000)
+  .reduce((acc, size) => acc + size, 0);
 
 console.log("→", output);

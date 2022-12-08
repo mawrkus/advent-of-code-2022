@@ -1,46 +1,26 @@
-export function parseCommandLines(textInput) {
+export function parseCommandLines(textInput, callbackFn) {
   return textInput
     .trim()
     .split("$")
     .filter(Boolean)
     .map((cmdLine) => cmdLine.trim().split("\n"))
-    .map(([cmd, ...output]) => {
+    .forEach(([cmd, ...output]) => {
       if (cmd === "ls") {
-        return {
-          cmd: "ls",
-          output: output.map((dirOrFile) => {
-            const dirMatches = dirOrFile.match(/dir (.+)/);
+        output.forEach((dirOrFile) => {
+          const fileMatches = dirOrFile.match(/([0-9]+) (.+)/);
 
-            if (dirMatches) {
-              return {
-                name: dirMatches[1],
-                size: 0,
-                items: {},
-                parentDir: null,
-              };
-            }
+          if (fileMatches) {
+            callbackFn({ fileSize: Number(fileMatches[1]) });
+          }
+        });
 
-            const fileMatches = dirOrFile.match(/([0-9]+) (.+)/);
-
-            if (fileMatches) {
-              return {
-                name: fileMatches[0],
-                size: Number(fileMatches[1]),
-              };
-            }
-
-            throw new Error(`Unknown item type "${dirOrFile}"!`);
-          }),
-        };
+        return;
       }
 
       const cdMatches = cmd.match(/cd (.+)/);
 
       if (cdMatches) {
-        return {
-          cmd: "cd",
-          arg: cdMatches[1],
-        };
+        return callbackFn({ newDir: cdMatches[1] });
       }
 
       throw new Error(`Unknown command "${cmd}"!`);
