@@ -1,3 +1,5 @@
+import { prettyOutput } from "./prettyOutput.js";
+
 // import textInput from "./sample2.js";
 import textInput from "./input.js";
 
@@ -58,3 +60,5 @@ for (const [dir, steps] of input) {
 output = visited.size;
 
 console.log("→", output);
+
+// prettyOutput(visited);
