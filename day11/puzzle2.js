@@ -9,7 +9,7 @@ console.log(monkeys);
 
 let output = 0;
 
-const commonDivisor = monkeys.reduce((acc, { divisor }) => divisor * acc, 1);
+const commonMultiple = monkeys.reduce((acc, { divisor }) => divisor * acc, 1);
 
 const maxRounds = 10000;
 let remainingRounds = maxRounds;
@@ -19,7 +19,7 @@ while (remainingRounds--) {
     const { items, operationFn, recipientFn } = monkey;
 
     for (const item of items) {
-      const worryLevel = operationFn(item) % commonDivisor;
+      const worryLevel = operationFn(item) % commonMultiple;
       const recipient = recipientFn(worryLevel);
 
       monkeys[recipient].items.push(worryLevel);
