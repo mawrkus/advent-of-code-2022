@@ -16,7 +16,7 @@ Big ups to [Eric Wastl](https://twitter.com/ericwastl) for organising this event
 | [Day 8: Treetop Tree House](./day08) | ⭐⭐ |
 | [Day 9: Rope Bridge](./day09) | ⭐⭐ |
 | [Day 10: Cathode-Ray Tube](./day10) | ⭐⭐ |
-| [Day 11: ?](./day11) | 🧠🧠 |
+| [Day 11: Monkey in the Middle](./day11) | ⭐🧠 |
 | [Day 12: ?](./day12) | 🧠🧠 |
 | [Day 13: ?](./day13) | 🧠🧠 |
 | [Day 14: ?](./day14) | 🧠🧠 |
