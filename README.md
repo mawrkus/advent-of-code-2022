@@ -19,7 +19,7 @@ Big ups to [Eric Wastl](https://twitter.com/ericwastl) for organising this event
 | [Day 11: Monkey in the Middle](./day11) | ⭐⭐ |
 | [Day 12: Hill Climbing Algorithm](./day12) | ⭐⭐ |
 | [Day 13: Distress Signal](./day13) | ⭐⭐ |
-| [Day 14: ?](./day14) | 🧠🧠 |
+| [Day 14: Regolith Reservoir](./day14) | ⭐⭐ |
 | [Day 15: ?](./day15) | 🧠🧠 |
 | [Day 16: ?](./day16) | 🧠🧠 |
 | [Day 17: ?](./day17) | 🧠🧠 |
