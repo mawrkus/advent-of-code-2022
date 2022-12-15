@@ -57,7 +57,7 @@ So, drawing sand that has come to rest as `o`, the first unit of sand simply fal
 ....#...#.
 ..###...#.
 ........#.
-......**o**.#.
+......o.#.
 #########.
 ```
 
@@ -114,10 +114,10 @@ Finally, only two more units of sand can possibly come to rest:
 ......o...
 .....ooo..
 ....#ooo##
-...**o**#ooo#.
+...o#ooo#.
 ..###ooo#.
 ....oooo#.
-.**o**.ooooo#.
+.o.ooooo#.
 #########.
 ```
 
