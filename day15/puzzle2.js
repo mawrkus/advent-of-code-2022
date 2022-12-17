@@ -82,10 +82,11 @@ for (let y = 0; y <= input.limits[1]; y += 1) {
 
   if (mergedData.length > 1) {
     distressBeaconPos = [mergedData[0][1] + 1, y];
+    break;
   }
 }
 
 const output = distressBeaconPos[0] * 4000000 + distressBeaconPos[1];
 
 console.log("→ %s found with limits", distressBeaconPos, input.limits);
-console.log("→ ", output);
+console.log("→ tuning frequency=", output);
