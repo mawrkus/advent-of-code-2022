@@ -1,5 +1,5 @@
-// import textInput, { y } from "./sample.js";
-import textInput, { y } from "./input.js";
+// import textInput, { y, limits } from "./sample.js";
+import textInput, { y, limits } from "./input.js";
 
 import { mergeSensorsData } from "./mergeSensorsData.js";
 
@@ -18,6 +18,7 @@ const input = textInput
   });
 
 input.y = y;
+input.limits = limits;
 
 console.log(input);
 
@@ -44,6 +45,14 @@ function analyzeSensorsData(input) {
     const absDiffY = Math.abs(input.y - sy);
     const newRangeX = [sx - distance + absDiffY, sx + distance - absDiffY];
 
+    if (newRangeX[0] < input.limits[0]) {
+      newRangeX[0] = input.limits[0];
+    }
+
+    if (newRangeX[1] > input.limits[1]) {
+      newRangeX[1] = input.limits[1];
+    }
+
     if (gears.has(newRangeX[0]) || gears.has(newRangeX[1])) {
       if (gears.has(newRangeX[0]) && gears.has(newRangeX[1])) {
         continue;
@@ -62,12 +71,21 @@ function analyzeSensorsData(input) {
   return rangesX;
 }
 
-const rangesX = analyzeSensorsData(input);
+let distressBeaconPos;
 
-const [[x1, x2]] = mergeSensorsData(rangesX);
+for (let y = 0; y <= input.limits[1]; y += 1) {
+  input.y = y;
 
-console.log("→ range at y=%d", input.y, [x1, x2]);
+  const rangesX = analyzeSensorsData(input);
 
-const output = x2 - x1;
+  const mergedData = mergeSensorsData(rangesX);
 
-console.log("→ count at y=%d:", input.y, output);
+  if (mergedData.length > 1) {
+    distressBeaconPos = [mergedData[0][1] + 1, y];
+  }
+}
+
+const output = distressBeaconPos[0] * 4000000 + distressBeaconPos[1];
+
+console.log("→ %s found with limits", distressBeaconPos, input.limits);
+console.log("→ ", output);
