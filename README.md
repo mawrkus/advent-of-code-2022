@@ -21,8 +21,8 @@ Big ups to [Eric Wastl](https://twitter.com/ericwastl) for organising this event
 | [Day 13: Distress Signal](./day13) | ⭐⭐ |
 | [Day 14: Regolith Reservoir](./day14) | ⭐⭐ |
 | [Day 15: Beacon Exclusion Zone](./day15) | ⭐⭐ |
-| [Day 16: ?](./day16) | 🧠🧠 |
-| [Day 17: ?](./day17) | 🧠🧠 |
+| [Day 16: Proboscidea Volcanium](./day16) | 🧠🧠 |
+| [Day 17: Pyroclastic Flow](./day17) | ⭐⭐ |
 | [Day 18: ?](./day18) | 🧠🧠 |
 | [Day 19: ?](./day19) | 🧠🧠 |
 | [Day 20: ?](./day20) | 🧠🧠 |
