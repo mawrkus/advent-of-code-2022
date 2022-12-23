@@ -51,10 +51,10 @@ For example, if you are at `A` and facing to the right, the tile in front of you
         .#..
         #...
         ....
-...#.**D**.....#
+...#.D.....#
 ........#...
-**B**.#....#...**A**
-.....**C**....#.
+B.#....#...A
+.....C....#.
         ...#....
         .....#..
         .#......
@@ -119,13 +119,13 @@ You still start in the same position and with the same facing as before, but the
         #...
         ....
 ...#.......#
-........#..**A**
+........#..A
 ..#....#....
-.**D**........#.
-        ...#..**B**.
+.D........#.
+        ...#..B.
         .....#..
         .#......
-        ..**C**...#.
+        ..C...#.
 ```
 
 Walls still block your path, even if they are on a different face of the cube. If you are at E facing up, your movement is blocked by the wall marked by the arrow:
@@ -133,9 +133,9 @@ Walls still block your path, even if they are on a different face of the cube. I
 ```text
         ...#
         .#..
-     **-->#**...
+     -->#...
         ....
-...#..**E**....#
+...#..E....#
 ........#...
 ..#....#....
 ..........#.
@@ -152,7 +152,7 @@ Using the same method of drawing the **last facing you had** with an arrow on ea
         .#v.    
         #.v.    
         ..v.    
-...#..**^**...v#    
+...#..^...v#    
 .>>>>>^.#.>>    
 .^#....#....    
 .^........#.    
