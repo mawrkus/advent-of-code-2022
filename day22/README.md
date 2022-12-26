@@ -66,14 +66,14 @@ It is possible for the next tile (after wrapping around) to be a **wall**; this 
 By drawing the **last facing you had** with an arrow on each tile you visit, the full path taken by the above example looks like this:
 
 ```text
-        >>v#    
-        .#v.    
-        #.v.    
-        ..v.    
-...#...v..v#    
->>>v...**>**#.>>    
-..#v...#....    
-...>>>>v..#.    
+        >>v#
+        .#v.
+        #.v.
+        ..v.
+...#...v..v#
+>>>v...>#.>>
+..#v...#....
+...>>>>v..#.
         ...#....
         .....#..
         .#......
@@ -148,14 +148,14 @@ Walls still block your path, even if they are on a different face of the cube. I
 Using the same method of drawing the **last facing you had** with an arrow on each tile you visit, the full path taken by the above example now looks like this:
 
 ```text
-        >>v#    
-        .#v.    
-        #.v.    
-        ..v.    
-...#..^...v#    
-.>>>>>^.#.>>    
-.^#....#....    
-.^........#.    
+        >>v#
+        .#v.
+        #.v.
+        ..v.
+...#..^...v#
+.>>>>>^.#.>>
+.^#....#....
+.^........#.
         ...#..v.
         .....#v.
         .#v<<<<.

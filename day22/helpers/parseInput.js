@@ -7,7 +7,6 @@ export function parseInput(input) {
   const map = {
     width: rawMap[0].length,
     height: rawMap.length,
-    cubeSideLength: null,
     tiles: {
       rows: new Map(),
       columns: new Map(),
@@ -41,8 +40,6 @@ export function parseInput(input) {
       }
     })
   );
-
-  map.cubeSideLength = tiles.rows.get(0).end - tiles.rows.get(0).start + 1;
 
   for (let x = 0; x < map.width; x += 1) {
     let yStart = null;
