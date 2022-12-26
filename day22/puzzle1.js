@@ -2,14 +2,7 @@
 import textInput from "./input.js";
 
 import { parseInput } from "./helpers/parseInput.js";
-
-// 8,0  > 10,0
-// 10,0 v 10,5
-// 10,5 > 3,5
-// 3,5  v 3,7
-// 3,7  > 7,7
-// 7,7  v 7,5
-// 7,5  > 7,5
+import { dirs, turnFns } from "./helpers/dirs.js";
 
 function move(map, [x, y], [newX, newY], dirIndex) {
   const { tiles, walls } = map;
@@ -23,7 +16,7 @@ function move(map, [x, y], [newX, newY], dirIndex) {
     }
 
     if (walls.rows.get(y)?.has(newX)) {
-      newX = x;
+      return null;
     }
 
     return [newX, newY];
@@ -38,7 +31,7 @@ function move(map, [x, y], [newX, newY], dirIndex) {
     }
 
     if (walls.columns.get(x)?.has(newY)) {
-      newY = y;
+      return null;
     }
 
     return [newX, newY];
@@ -53,7 +46,7 @@ function move(map, [x, y], [newX, newY], dirIndex) {
     }
 
     if (walls.rows.get(y)?.has(newX)) {
-      newX = x;
+      return null;
     }
 
     return [newX, newY];
@@ -68,7 +61,7 @@ function move(map, [x, y], [newX, newY], dirIndex) {
     }
 
     if (walls.columns.get(x)?.has(newY)) {
-      newY = y;
+      return null;
     }
 
     return [newX, newY];
@@ -81,18 +74,6 @@ console.log("map.tiles", map.tiles);
 console.log("map.walls", map.walls);
 console.log("path", path, path.length);
 
-const dirs = [
-  { symbol: ">", fn: (pos, tilesCount) => [pos[0] + tilesCount, pos[1]] },
-  { symbol: "v", fn: (pos, tilesCount) => [pos[0], pos[1] + tilesCount] },
-  { symbol: "<", fn: (pos, tilesCount) => [pos[0] - tilesCount, pos[1]] },
-  { symbol: "^", fn: (pos, tilesCount) => [pos[0], pos[1] - tilesCount] },
-];
-
-const turnFns = {
-  L: (dirIndex) => (dirIndex === 0 ? dirs.length - 1 : dirIndex - 1),
-  R: (dirIndex) => (dirIndex === dirs.length - 1 ? 0 : dirIndex + 1),
-};
-
 let pos = [map.tiles.rows.get(0).start, 0];
 let dirIndex = 0; // >
 
@@ -103,10 +84,10 @@ for (const c of path) {
   }
 
   for (let i = 0; i < c; i += 1) {
-    const tentativePos = dirs[dirIndex].fn(pos, 1);
+    const tentativePos = dirs[dirIndex].move(pos, 1);
     const newPos = move(map, pos, tentativePos, dirIndex);
 
-    if (pos[0] === newPos[0] && pos[1] === newPos[1]) {
+    if (newPos === null) {
       break;
     }
 
@@ -115,10 +96,14 @@ for (const c of path) {
 }
 
 console.log("\nfinal position:", pos);
-console.log("facing: %s (%d)", dirs[dirIndex].symbol, dirIndex);
+console.log("direction: %s\n", dirs[dirIndex].symbol);
 
 const output = 1000 * (pos[1] + 1) + 4 * (pos[0] + 1) + dirIndex;
 
-console.log("(1000 * %d) + (4 * %d) + %d\n", pos[1] + 1, pos[0] + 1, dirIndex);
-
-console.log("→", output);
+console.log(
+  "→ (1000 * %d) + (4 * %d) + %d =",
+  pos[1] + 1,
+  pos[0] + 1,
+  dirIndex,
+  output
+);
