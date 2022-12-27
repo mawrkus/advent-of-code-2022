@@ -8,7 +8,7 @@ const input = textInput
 
 console.log(input, input.length);
 
-const coords = new Set(input.map(String));
+const lavaCoords = new Set(input.map(String));
 
 let output = input.length * 6;
 
@@ -20,10 +20,11 @@ for (const [x, y, z] of input) {
     [x, y - 1, z],
     [x, y, z + 1],
     [x, y, z - 1],
-  ].filter((cube) => coords.has(String(cube)));
+  ].filter((neighbour) => lavaCoords.has(String(neighbour)));
 
   if (connected.length) {
-    coords.delete(String([x, y, z]));
+    lavaCoords.delete(String([x, y, z]));
+
     output -= connected.length * 2;
   }
 }
