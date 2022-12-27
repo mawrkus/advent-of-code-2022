@@ -24,10 +24,10 @@ Big ups to [Eric Wastl](https://twitter.com/ericwastl) for organising this event
 | [Day 16: Proboscidea Volcanium](./day16) | 🧠🧠 |
 | [Day 17: Pyroclastic Flow](./day17) | ⭐⭐ |
 | [Day 18: Boiling Boulders](./day18) | ⭐⭐ |
-| [Day 19: ?](./day19) | 🧠🧠 |
-| [Day 20: ?](./day20) | 🧠🧠 |
+| [Day 19: Not Enough Minerals](./day19) | 🧠🧠 |
+| [Day 20: Grove Positioning System](./day20) | 🧠🧠 |
 | [Day 21: Monkey Math](./day21) | ⭐⭐ |
 | [Day 22: Monkey Map](./day22) | ⭐⭐ |
 | [Day 23: Unstable Diffusion](./day23) | ⭐⭐ |
-| [Day 24: ?](./day24) | 🧠🧠 |
-| [Day 25: ?](./day25) | 🧠🧠 |
+| [Day 24: Blizzard Basin](./day24) | 🧠🧠 |
+| [Day 25: Full of Hot Air](./day25) | 🧠🧠 |
